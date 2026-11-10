@@ -1,9 +1,14 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-*/
 venv/
+*.log
 .streamlit/secrets.toml
 models/*.pth
 models/*.pt
 models/*.onnx
+models/*.f32
+models/model_meta.json
+models/class_labels.json
 !models/.gitkeep

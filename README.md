@@ -1,46 +1,56 @@
 # PlantCare AI
 
-A website-only Python prototype for checking leaf-photo quality and preparing for plant-disease screening.
+A local, website-only Python prototype for leaf-photo quality checks and plant-disease screening.
 
-## What works in this prototype
+## What the site does
 
-- Upload JPG, PNG, or WebP leaf photos up to 10 MB.
-- Review image size, brightness, contrast, blur, and exposure warnings.
-- Keep a usable photo unchanged, apply a mild contrast adjustment when the contrast check is low, or ask for a retake when the photo is very blurry or badly exposed.
-- Show clear project and privacy information.
-- Load an optional EfficientNet-B0 classifier when compatible trained weights and a class-label file are provided.
+- Accepts JPG, PNG, or WebP photos up to 10 MB.
+- Checks image size, brightness, contrast, blur, and exposure.
+- Keeps usable photos unchanged, applies a mild contrast adjustment for low-contrast images, and recommends a retake for very blurry or badly exposed photos.
+- Runs a 38-class image classifier locally on the computer after its quantized ONNX model downloads on first use (about 24 MB).
+- Checks whether the image resembles the single-leaf images the model supports and withholds disease guesses when it does not.
+- Shows the top model matches, image-quality notes, and a clear research-prototype disclaimer.
+- Does not save uploaded images.
 
-The image-quality checks are simple project heuristics, not validated agronomic measures. No trained model or disease-classification result is included. The page will say so instead of displaying a made-up prediction.
+The model is trained and evaluated on PlantVillage-style images. Its model card reports held-out PlantVillage results but warns that field performance can be substantially lower. The out-of-scope similarity threshold is provided by the model author and has not been independently checked here. The score shown by this website is a raw model score, not calibrated confidence. Confirm any result with an agricultural expert; do not use this site to decide treatment.
 
-## Run it locally
+## Run locally
 
 1. Install Python 3.10 or newer.
-2. Create and activate a virtual environment.
-3. Install the website packages:
+2. Open PowerShell in this folder and create a virtual environment. If the Python launcher is installed, use:
 
-   ```bash
-   pip install -r requirements.txt
+   ```powershell
+   py -3.12 -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+   If `py -3.12` is not recognized, use the path to your Python 3.10+ executable. On this computer:
+
+   ```powershell
+   & 'C:\Users\thahe\AppData\Local\Programs\Python\Python312\python.exe' -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+3. Install dependencies:
+
+   ```powershell
+   python -m pip install -r requirements.txt
    ```
 
 4. Start the site:
 
-   ```bash
+   ```powershell
    streamlit run app.py
    ```
 
-To enable the optional model loader, install `requirements-model.txt` and add both files below:
+5. Open the local address shown by Streamlit, usually `http://localhost:8501`.
 
-- `models/plantcare_effnet_b0.pth` - an EfficientNet-B0 state dictionary trained for this project.
-- `models/class_labels.json` - a JSON list of class names in the exact order used during training.
-
-The model files are ignored by Git because trained weights can be large and their provenance and usage terms need to be checked before sharing. A compatible model must be trained and validated before the classifier should be used for screening.
+The computer needs internet access the first time a photo is submitted so the model and its metadata can be downloaded. After that, the files are cached in `models/` and inference runs locally. The model cache is ignored by Git.
 
 ## Is TypeScript useful here?
 
-Not for the first version. Streamlit builds the interface in Python, which keeps this intermediate project focused on Python and image processing. TypeScript would be useful later if the project moves to a custom React frontend with richer interactions. That would add a second app and a separate API, so this prototype keeps the stack small.
+Not for this version. Streamlit builds the whole interface in Python, which keeps the project focused on Python and image processing. TypeScript would make sense later if the project moved to a custom React frontend with a separate API.
 
-## Research status and limits
+## Research and model attribution
 
-This repository contains a working photo-quality website prototype and an optional model-loading interface. It does not contain PlantVillage or PlantDoc images, trained model weights, validated thresholds, or experimental results. The proposed quality routing and disease-screening approach needs evaluation before any reliability claim is made.
-
-PlantCare AI is a learning prototype. It is not a confirmed plant diagnosis or treatment recommendation. For decisions that affect a crop, consult a local agricultural expert.
+This prototype uses the [DINOv2 Plant Disease model](https://huggingface.co/rodynaemad/plant-disease-dinov2-small), shared under CC BY-SA 4.0. Its own model card describes the dataset, reported evaluation, intended use, and limitations. The image-quality thresholds in this project are simple heuristics and have not been validated. This repository does not contain PlantVillage or PlantDoc images, does not claim its own accuracy, and does not include invented experimental results.

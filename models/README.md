@@ -1,8 +1,5 @@
-# Optional model files
+# Local model cache
 
-The website's disease-classification panel stays disabled until a compatible model is supplied.
+The application downloads a quantized ONNX classifier, model metadata, and the author's class centroids for the out-of-scope check the first time a photo is submitted. The files are saved here and reused on later visits. They are ignored by Git.
 
-- `plantcare_effnet_b0.pth`: EfficientNet-B0 state dictionary, with the final classifier layer sized to the number of classes.
-- `class_labels.json`: JSON list of class names in the same order used during training.
-
-The `.pth` file is intentionally ignored by Git. Before sharing or deploying a model, verify its training data, evaluation results, and redistribution terms. Do not treat raw model scores as calibrated confidence unless calibration has been fitted and documented.
+The classifier is shared under CC BY-SA 4.0. Its model card reports evaluation on the PlantVillage collection and warns that performance on field photos can be substantially lower. This site displays raw model scores, not calibrated confidence, and does not provide treatment advice. The OOD centroids and threshold are from the model author's public scanner Space and have not been independently validated in this project.

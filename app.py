@@ -6,7 +6,7 @@ import streamlit as st
 from PIL import Image, UnidentifiedImageError
 
 from src.image_quality import assess_image, prepare_image
-from src.predictor import load_predictor
+from src.predictor import format_label, load_predictor
 
 
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024
@@ -139,22 +139,26 @@ def show_upload_page() -> None:
                 st.image(prepared, caption="Prototype contrast adjustment", use_container_width=True)
 
         st.markdown("#### Disease screening")
-        predictor, predictor_message = load_predictor()
+        with st.spinner("Loading the plant classifier. First use downloads the model file (~24 MB)."):
+            predictor, predictor_message = load_predictor()
         if predictor is None:
             st.warning(predictor_message)
         elif route.should_retake:
             st.info("The classifier is ready, but this photo needs to be retaken first.")
         else:
             try:
-                predictions = predictor.predict(prepared)
-                if predictions:
-                    top = predictions[0]
-                    st.success(f"Possible match: **{top.label}** · model score {top.score:.1%}")
-                    st.caption("This score is a model estimate, not a confirmed diagnosis.")
-                    if len(predictions) > 1:
+                result = predictor.predict(prepared)
+                if not result.in_scope:
+                    st.error("This photo does not look enough like the single-leaf images supported by the model. The disease guesses would be unreliable.")
+                    st.caption(f"Out-of-scope similarity: {result.similarity:.3f} (minimum {predictor.threshold:.3f}). Try one clear leaf on a plain background.")
+                elif result.candidates:
+                    top = result.candidates[0]
+                    st.success(f"Possible match: **{format_label(top.label)}** · model score {top.score:.1%}")
+                    st.caption(f"Raw model score, not calibrated confidence. Image similarity check: {result.similarity:.3f}. A match is not a confirmed diagnosis.")
+                    if len(result.candidates) > 1:
                         st.write("Other model candidates")
-                        for item in predictions[1:]:
-                            st.write(f"- {item.label}: {item.score:.1%}")
+                        for item in result.candidates[1:]:
+                            st.write(f"- {format_label(item.label)}: {item.score:.1%}")
             except Exception as exc:  # keep the interface usable if optional weights are incompatible
                 st.error("The model could not analyze this image. Check the model file and label list.")
                 st.caption(f"Technical detail: {exc}")
@@ -164,6 +168,7 @@ def show_upload_page() -> None:
         "PlantCare AI is a student research prototype. It does not provide a confirmed diagnosis or treatment advice. "
         "For plant health decisions, consult a local agricultural expert."
     )
+    st.caption("Classifier: [DINOv2 Plant Disease model](https://huggingface.co/rodynaemad/plant-disease-dinov2-small) · CC BY-SA 4.0. Its author reports a centroid similarity check for out-of-scope images. Field performance is unknown.")
 
 
 def show_about_page() -> None:
