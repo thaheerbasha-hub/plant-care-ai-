@@ -1,0 +1,1130 @@
+{
+  "0": {
+    "model_label": "African Violet",
+    "scientific_name": "Saintpaulia ionantha",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water from bottom to avoid wet leaves",
+      "notes": "Use room temperature water"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly with diluted fertilizer",
+      "pruning": "Remove spent flowers and dead leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Moderate"
+    },
+    "price": 12.99,
+    "category": "Plants"
+  },
+  "1": {
+    "model_label": "Aloe Vera",
+    "scientific_name": "Aloe barbadensis",
+    "watering_schedule": {
+      "frequency": "Every 2-3 weeks",
+      "amount": "Water deeply, then allow soil to dry completely",
+      "notes": "Succulent that stores water in its leaves"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Low humidity preferred",
+      "fertilizer": "2-3 times during growing season",
+      "pruning": "Remove dead outer leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 14.99,
+    "category": "Plants"
+  },
+  "2": {
+    "model_label": "Anthurium",
+    "scientific_name": "Anthurium andraeanum",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Prefers consistently moist soil"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "20-25\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove spent flowers and yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": true,
+      "difficulty": "Moderate"
+    },
+    "price": 29.99,
+    "category": "Plants"
+  },
+  "3": {
+    "model_label": "Areca Palm",
+    "scientific_name": "Dypsis lutescens",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Prefers consistently moist soil"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove brown or dead fronds"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 45.99,
+    "category": "Plants"
+  },
+  "4": {
+    "model_label": "Asparagus Fern",
+    "scientific_name": "Asparagus setaceus",
+    "watering_schedule": {
+      "frequency": "2-3 times per week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Doesn't tolerate dry conditions"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "16-21\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Trim yellowing stems"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 16.99,
+    "category": "Plants"
+  },
+  "5": {
+    "model_label": "Begonia",
+    "scientific_name": "Begonia spp.",
+    "watering_schedule": {
+      "frequency": "2-3 times per week",
+      "amount": "Water when top inch is dry",
+      "notes": "Avoid getting water on leaves"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-22\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Bi-weekly during flowering",
+      "pruning": "Deadhead spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 14.99,
+    "category": "Plants"
+  },
+  "6": {
+    "model_label": "Bird of Paradise",
+    "scientific_name": "Strelitzia reginae",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch of soil is dry",
+      "notes": "Prefers consistently moist soil during growing season"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "20-25\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove dead leaves and flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": true,
+      "difficulty": "Moderate"
+    },
+    "price": 49.99,
+    "category": "Plants"
+  },
+  "7": {
+    "model_label": "Birds Nest Fern",
+    "scientific_name": "Asplenium nidus",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water at base, avoid center",
+      "notes": "Keep soil consistently moist"
+    },
+    "care_instructions": {
+      "light": "Low to medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove damaged fronds only"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 22.99,
+    "category": "Plants"
+  },
+  "8": {
+    "model_label": "Boston Fern",
+    "scientific_name": "Nephrolepis exaltata",
+    "watering_schedule": {
+      "frequency": "2-3 times per week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Never allow soil to dry out completely"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "16-21\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove brown fronds regularly"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 18.99,
+    "category": "Plants"
+  },
+  "9": {
+    "model_label": "Calathea",
+    "scientific_name": "Calathea spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Use filtered or distilled water"
+    },
+    "care_instructions": {
+      "light": "Medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Hard"
+    },
+    "price": 26.99,
+    "category": "Plants"
+  },
+  "10": {
+    "model_label": "Cast Iron Plant",
+    "scientific_name": "Aspidistra elatior",
+    "watering_schedule": {
+      "frequency": "Every 2 weeks",
+      "amount": "Water when soil is dry",
+      "notes": "Very drought tolerant"
+    },
+    "care_instructions": {
+      "light": "Low to medium light",
+      "temperature": "16-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "2-3 times per year",
+      "pruning": "Remove damaged leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Very Easy"
+    },
+    "price": 24.99,
+    "category": "Plants"
+  },
+  "11": {
+    "model_label": "Chinese Money Plant",
+    "scientific_name": "Pilea peperomioides",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Allow soil to dry between waterings"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": false,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 15.99,
+    "category": "Plants"
+  },
+  "12": {
+    "model_label": "Chinese Evergreen",
+    "scientific_name": "Aglaonema spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Prefers consistently moist soil"
+    },
+    "care_instructions": {
+      "light": "Low to medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average to high humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 21.99,
+    "category": "Plants"
+  },
+  "13": {
+    "model_label": "Christmas Cactus",
+    "scientific_name": "Schlumbergera bridgesii",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Reduce watering after flowering"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "16-21\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Pinch after flowering to encourage branching"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 18.99,
+    "category": "Plants"
+  },
+  "14": {
+    "model_label": "Chrysanthemum",
+    "scientific_name": "Chrysanthemum spp.",
+    "watering_schedule": {
+      "frequency": "2-3 times per week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Water at base to avoid wet leaves"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "16-21\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Bi-weekly during flowering",
+      "pruning": "Deadhead spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 12.99,
+    "category": "Plants"
+  },
+  "15": {
+    "model_label": "Ctenanthe",
+    "scientific_name": "Ctenanthe spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Use filtered water when possible"
+    },
+    "care_instructions": {
+      "light": "Medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 23.99,
+    "category": "Plants"
+  },
+  "16": {
+    "model_label": "Daffodils",
+    "scientific_name": "Narcissus spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when soil is dry",
+      "notes": "Reduce watering after flowering"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "16-20\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Deadhead spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 8.99,
+    "category": "Plants"
+  },
+  "17": {
+    "model_label": "Dracaena",
+    "scientific_name": "Dracaena spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top 2cm is dry",
+      "notes": "Prefers to dry out between waterings"
+    },
+    "care_instructions": {
+      "light": "Medium to bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Trim brown leaf tips"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 32.99,
+    "category": "Plants"
+  },
+  "18": {
+    "model_label": "Dumb Cane",
+    "scientific_name": "Dieffenbachia spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Keep soil consistently moist"
+    },
+    "care_instructions": {
+      "light": "Medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average to high humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 26.99,
+    "category": "Plants"
+  },
+  "19": {
+    "model_label": "Elephant Ear",
+    "scientific_name": "Alocasia spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Prefers high humidity"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "20-25\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Hard"
+    },
+    "price": 38.99,
+    "category": "Plants"
+  },
+  "20": {
+    "model_label": "English Ivy",
+    "scientific_name": "Hedera helix",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Prefers slightly moist soil"
+    },
+    "care_instructions": {
+      "light": "Medium to bright indirect light",
+      "temperature": "16-21\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Trim to control growth"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 13.99,
+    "category": "Plants"
+  },
+  "21": {
+    "model_label": "Hyacinth",
+    "scientific_name": "Hyacinthus orientalis",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil lightly moist",
+      "notes": "Reduce watering after flowering"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "16-20\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Deadhead spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 9.99,
+    "category": "Plants"
+  },
+  "22": {
+    "model_label": "Iron Cross Begonia",
+    "scientific_name": "Begonia masoniana",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Avoid getting water on leaves"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove damaged leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 19.99,
+    "category": "Plants"
+  },
+  "23": {
+    "model_label": "Jade Plant",
+    "scientific_name": "Crassula ovata",
+    "watering_schedule": {
+      "frequency": "Every 2-3 weeks",
+      "amount": "Water deeply when soil is dry",
+      "notes": "Succulent that prefers to dry out between waterings"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Low humidity preferred",
+      "fertilizer": "2-3 times during growing season",
+      "pruning": "Pinch growth tips to encourage bushiness"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 16.99,
+    "category": "Plants"
+  },
+  "24": {
+    "model_label": "Kalanchoe",
+    "scientific_name": "Kalanchoe blossfeldiana",
+    "watering_schedule": {
+      "frequency": "Every 2 weeks",
+      "amount": "Water deeply when soil is dry",
+      "notes": "Succulent that stores water in leaves"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Low humidity preferred",
+      "fertilizer": "Monthly during flowering",
+      "pruning": "Deadhead spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 11.99,
+    "category": "Plants"
+  },
+  "25": {
+    "model_label": "Lilium",
+    "scientific_name": "Hemerocallis spp.",
+    "watering_schedule": {
+      "frequency": "2-3 times per week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Water regularly during growing season"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Bi-weekly during flowering",
+      "pruning": "Deadhead spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 17.99,
+    "category": "Plants"
+  },
+  "26": {
+    "model_label": "Lily of the Valley",
+    "scientific_name": "Convallaria majalis",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Prefers cool, moist conditions"
+    },
+    "care_instructions": {
+      "light": "Low to medium indirect light",
+      "temperature": "16-20\u00c2\u00b0C",
+      "humidity": "Average to high humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Moderate"
+    },
+    "price": 14.99,
+    "category": "Plants"
+  },
+  "27": {
+    "model_label": "Money Tree",
+    "scientific_name": "Pachira aquatica",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top 2cm is dry",
+      "notes": "Prefers to dry out between waterings"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average to high humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Prune to maintain shape"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 31.99,
+    "category": "Plants"
+  },
+  "28": {
+    "model_label": "Monstera Deliciosa",
+    "scientific_name": "Monstera deliciosa",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top 2-3cm of soil is dry",
+      "notes": "Prefers consistently moist but not waterlogged soil"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-27\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Trim aerial roots and dead leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 34.99,
+    "category": "Plants"
+  },
+  "29": {
+    "model_label": "Orchid",
+    "scientific_name": "Phalaenopsis spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water with 3 ice cubes or small amount of water",
+      "notes": "Water in morning and ensure good drainage"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Orchid fertilizer monthly",
+      "pruning": "Cut flower spike after blooming"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Hard"
+    },
+    "price": 32.99,
+    "category": "Plants"
+  },
+  "30": {
+    "model_label": "Parlor Palm",
+    "scientific_name": "Chamaedorea elegans",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil lightly moist",
+      "notes": "Avoid overwatering"
+    },
+    "care_instructions": {
+      "light": "Low to medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average to high humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove brown fronds"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 27.99,
+    "category": "Plants"
+  },
+  "31": {
+    "model_label": "Peace Lily",
+    "scientific_name": "Spathiphyllum wallisii",
+    "watering_schedule": {
+      "frequency": "1-2 times per week",
+      "amount": "Keep soil consistently moist but not soggy",
+      "notes": "Leaves will droop when it needs water"
+    },
+    "care_instructions": {
+      "light": "Low to medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove spent flowers and yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 19.99,
+    "category": "Plants"
+  },
+  "32": {
+    "model_label": "Poinsettia",
+    "scientific_name": "Euphorbia pulcherrima",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Avoid overwatering"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "16-21\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Prune after flowering"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Moderate"
+    },
+    "price": 15.99,
+    "category": "Plants"
+  },
+  "33": {
+    "model_label": "Polka Dot Plant",
+    "scientific_name": "Hypoestes phyllostachya",
+    "watering_schedule": {
+      "frequency": "2-3 times per week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Prefers high humidity"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity preferred",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Pinch flowers to encourage foliage"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": false,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 9.99,
+    "category": "Plants"
+  },
+  "34": {
+    "model_label": "Ponytail Palm",
+    "scientific_name": "Beaucarnea recurvata",
+    "watering_schedule": {
+      "frequency": "Every 2-3 weeks",
+      "amount": "Water deeply when soil is dry",
+      "notes": "Very drought tolerant"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Low humidity preferred",
+      "fertilizer": "2-3 times per year",
+      "pruning": "Remove damaged leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": false,
+      "flowering": false,
+      "difficulty": "Very Easy"
+    },
+    "price": 42.99,
+    "category": "Plants"
+  },
+  "35": {
+    "model_label": "Pothos",
+    "scientific_name": "Epipremnum aureum",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch of soil feels dry",
+      "notes": "Drooping leaves indicate it's time to water"
+    },
+    "care_instructions": {
+      "light": "Low to bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average home humidity",
+      "fertilizer": "Monthly during spring and summer",
+      "pruning": "Pinch or cut vines to encourage bushiness"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 16.99,
+    "category": "Plants"
+  },
+  "36": {
+    "model_label": "Prayer Plant",
+    "scientific_name": "Maranta leuconeura",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Use filtered water when possible"
+    },
+    "care_instructions": {
+      "light": "Medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove yellowing leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 20.99,
+    "category": "Plants"
+  },
+  "37": {
+    "model_label": "Rattlesnake Plant",
+    "scientific_name": "Calathea lancifolia",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Keep soil consistently moist",
+      "notes": "Use filtered or distilled water"
+    },
+    "care_instructions": {
+      "light": "Medium indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Remove browning leaves"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Hard"
+    },
+    "price": 24.99,
+    "category": "Plants"
+  },
+  "38": {
+    "model_label": "Rubber Plant",
+    "scientific_name": "Ficus elastica",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top 2-3cm of soil is dry",
+      "notes": "Reduce watering in winter"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average to high humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Prune to maintain shape and size"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 28.99,
+    "category": "Plants"
+  },
+  "39": {
+    "model_label": "Sago Palm",
+    "scientific_name": "Cycas revoluta",
+    "watering_schedule": {
+      "frequency": "Every 2 weeks",
+      "amount": "Water when soil is dry",
+      "notes": "Prefers to dry between waterings"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "2-3 times per year",
+      "pruning": "Remove yellowing fronds"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": false,
+      "difficulty": "Moderate"
+    },
+    "price": 67.99,
+    "category": "Plants"
+  },
+  "40": {
+    "model_label": "Schefflera",
+    "scientific_name": "Schefflera actinophylla",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Allow soil to dry between waterings"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Prune to maintain shape"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 33.99,
+    "category": "Plants"
+  },
+  "41": {
+    "model_label": "Snake Plant",
+    "scientific_name": "Sansevieria trifasciata",
+    "watering_schedule": {
+      "frequency": "Every 2-3 weeks",
+      "amount": "Water deeply, then allow to dry completely",
+      "notes": "Reduce watering in winter to once a month"
+    },
+    "care_instructions": {
+      "light": "Low to bright indirect light",
+      "temperature": "16-27\u00c2\u00b0C",
+      "humidity": "Average home humidity",
+      "fertilizer": "2-3 times during growing season",
+      "pruning": "Cut damaged leaves at soil level"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Very Easy"
+    },
+    "price": 22.99,
+    "category": "Plants"
+  },
+  "42": {
+    "model_label": "Tradescantia",
+    "scientific_name": "Tradescantia zebrina",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when top inch is dry",
+      "notes": "Prefers consistently moist soil"
+    },
+    "care_instructions": {
+      "light": "Bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Pinch to encourage bushiness"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Easy"
+    },
+    "price": 12.99,
+    "category": "Plants"
+  },
+  "43": {
+    "model_label": "Tulip",
+    "scientific_name": "Tulipa spp.",
+    "watering_schedule": {
+      "frequency": "Once a week",
+      "amount": "Water when soil is dry",
+      "notes": "Reduce watering after flowering"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "16-20\u00c2\u00b0C",
+      "humidity": "Average humidity",
+      "fertilizer": "Monthly during growing season",
+      "pruning": "Deadhead spent flowers"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Easy"
+    },
+    "price": 8.99,
+    "category": "Plants"
+  },
+  "44": {
+    "model_label": "Venus Flytrap",
+    "scientific_name": "Dionaea muscipula",
+    "watering_schedule": {
+      "frequency": "2-3 times per week",
+      "amount": "Keep soil consistently moist with distilled water",
+      "notes": "Carnivorous plant with special water requirements"
+    },
+    "care_instructions": {
+      "light": "Bright direct light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "High humidity required",
+      "fertilizer": "Never fertilize - catches own food",
+      "pruning": "Remove blackened traps"
+    },
+    "characteristics": {
+      "toxicToPets": false,
+      "airPurifying": false,
+      "flowering": true,
+      "difficulty": "Hard"
+    },
+    "price": 19.99,
+    "category": "Plants"
+  },
+  "45": {
+    "model_label": "Yucca",
+    "scientific_name": "Yucca elephantipes",
+    "watering_schedule": {
+      "frequency": "Every 2-3 weeks",
+      "amount": "Water deeply when soil is completely dry",
+      "notes": "Very drought tolerant, avoid overwatering"
+    },
+    "care_instructions": {
+      "light": "Bright indirect to direct light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Low humidity preferred",
+      "fertilizer": "2-3 times per year",
+      "pruning": "Remove damaged leaves at base"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": true,
+      "difficulty": "Very Easy"
+    },
+    "price": 52.99,
+    "category": "Plants"
+  },
+  "46": {
+    "model_label": "ZZ Plant",
+    "scientific_name": "Zamioculcas zamiifolia",
+    "watering_schedule": {
+      "frequency": "Every 2-3 weeks",
+      "amount": "Water thoroughly when soil is completely dry",
+      "notes": "Very drought tolerant, overwatering is more harmful than underwatering"
+    },
+    "care_instructions": {
+      "light": "Low to bright indirect light",
+      "temperature": "18-24\u00c2\u00b0C",
+      "humidity": "Average home humidity",
+      "fertilizer": "Monthly during spring and summer",
+      "pruning": "Remove yellowing leaves at base"
+    },
+    "characteristics": {
+      "toxicToPets": true,
+      "airPurifying": true,
+      "flowering": false,
+      "difficulty": "Very Easy"
+    },
+    "price": 24.99,
+    "category": "Plants"
+  }
+}

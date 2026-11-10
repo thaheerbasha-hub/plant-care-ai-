@@ -6,14 +6,15 @@ import streamlit as st
 from PIL import Image, UnidentifiedImageError
 
 from src.image_quality import assess_image, prepare_image
-from src.predictor import format_label, load_predictor
+from src.predictor import format_label, load_predictor, PlantCareInfo
 
 
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 SUPPORTED_TYPES = ["jpg", "jpeg", "png", "webp"]
 
+
 st.set_page_config(
-    page_title="PlantCare AI | Leaf photo screening",
+    page_title="PlantCare AI | Plant Identification & Care",
     page_icon="🌿",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -66,6 +67,13 @@ st.markdown(
     .small-note { color:#52645a !important; font-size:.9rem; }
     div.stButton > button { border-radius:12px; border:0; background:#235640; color:white !important; font-weight:700; }
     div.stButton > button:hover { background:#173c32; color:white !important; }
+    .care-section { background:white; border:1px solid #e5e9df; border-radius:16px; padding:20px; margin:16px 0; }
+    .care-title { color:var(--forest); font-size:1.1rem; font-weight:700; margin-bottom:12px; }
+    .care-item { margin:8px 0; }
+    .care-label { color:#64736b; font-size:.85rem; font-weight:600; }
+    .care-value { color:var(--ink); margin-top:2px; }
+    .characteristic-pill { display:inline-block; background:#e9f2e9; color:#173c32; padding:4px 10px; border-radius:999px; font-size:.8rem; font-weight:600; margin:4px 4px 4px 0; }
+    .characteristic-pill.warning { background:#fef3e2; color:#b45309; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -81,43 +89,118 @@ def metric_card(label: str, value: str) -> str:
     )
 
 
+def render_care_info(care: PlantCareInfo) -> None:
+    """Render plant care information in a nice format."""
+    st.markdown("#### 🌱 Plant Care Guide")
+
+    # Scientific name
+    st.markdown(
+        f'<div class="care-section"><div class="care-title">Scientific Name</div>'
+        f'<div class="care-item"><span class="care-value">{care.scientific_name}</span></div></div>',
+        unsafe_allow_html=True,
+    )
+
+    # Watering schedule
+    ws = care.watering_schedule
+    if ws:
+        st.markdown(
+            f'<div class="care-section"><div class="care-title">💧 Watering Schedule</div>'
+            f'<div class="care-item"><span class="care-label">Frequency:</span> '
+            f'<span class="care-value">{ws.get("frequency", "Not specified")}</span></div>'
+            f'<div class="care-item"><span class="care-label">Amount:</span> '
+            f'<span class="care-value">{ws.get("amount", "Not specified")}</span></div>'
+            f'<div class="care-item"><span class="care-label">Notes:</span> '
+            f'<span class="care-value">{ws.get("notes", "Not specified")}</span></div></div>',
+            unsafe_allow_html=True,
+        )
+
+    # Care instructions
+    ci = care.care_instructions
+    if ci:
+        st.markdown(
+            f'<div class="care-section"><div class="care-title">☀️ Care Instructions</div>'
+            f'<div class="care-item"><span class="care-label">Light:</span> '
+            f'<span class="care-value">{ci.get("light", "Not specified")}</span></div>'
+            f'<div class="care-item"><span class="care-label">Temperature:</span> '
+            f'<span class="care-value">{ci.get("temperature", "Not specified")}</span></div>'
+            f'<div class="care-item"><span class="care-label">Humidity:</span> '
+            f'<span class="care-value">{ci.get("humidity", "Not specified")}</span></div>'
+            f'<div class="care-item"><span class="care-label">Fertilizer:</span> '
+            f'<span class="care-value">{ci.get("fertilizer", "Not specified")}</span></div>'
+            f'<div class="care-item"><span class="care-label">Pruning:</span> '
+            f'<span class="care-value">{ci.get("pruning", "Not specified")}</span></div></div>',
+            unsafe_allow_html=True,
+        )
+
+    # Characteristics
+    ch = care.characteristics
+    if ch:
+        pills = []
+        if ch.get("toxicToPets"):
+            pills.append('<span class="characteristic-pill warning">⚠️ Toxic to Pets</span>')
+        else:
+            pills.append('<span class="characteristic-pill">✅ Pet Safe</span>')
+
+        if ch.get("airPurifying"):
+            pills.append('<span class="characteristic-pill">🌬️ Air Purifying</span>')
+
+        if ch.get("flowering"):
+            pills.append('<span class="characteristic-pill">🌸 Flowering</span>')
+
+        difficulty = ch.get("difficulty", "Not specified")
+        pills.append(f'<span class="characteristic-pill">📊 Difficulty: {difficulty}</span>')
+
+        st.markdown(
+            f'<div class="care-section"><div class="care-title">🌿 Characteristics</div>'
+            f'<div class="care-item">{"".join(pills)}</div></div>',
+            unsafe_allow_html=True,
+        )
+
+
 def show_upload_page() -> None:
     st.markdown(
         """
         <div class="hero">
           <div class="eyebrow">PlantCare AI · Research prototype</div>
-          <h1>A clearer first look at leaf health.</h1>
-          <p>Upload a leaf photo for image-quality checks and screening across the model's supported classes. Results are preliminary signals, not a confirmed diagnosis.</p>
+          <h1>Identify your houseplant & get care guidance</h1>
+          <p>Upload a photo of a houseplant for species identification and detailed care instructions. Results are preliminary — confirm with a local expert for critical decisions.</p>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
-    st.subheader("Start with a leaf photo")
+    st.subheader("Start with a plant photo")
     uploaded = st.file_uploader(
-        "Choose a clear photo of one leaf",
+        "Choose a clear photo of a houseplant",
         type=SUPPORTED_TYPES,
         help="JPG, PNG, or WebP. The prototype accepts files up to 10 MB.",
     )
-    st.caption("For the most useful quality check, keep the leaf in focus and fill a good part of the frame.")
+    st.caption("For best results, photograph a single plant in good lighting, filling most of the frame.")
     if not uploaded:
         left, right = st.columns([1.1, 0.9], gap="large")
         with left:
             st.markdown(
                 '<div class="soft-card"><strong>What happens next?</strong><br>'
-                '<span class="small-note">The site checks blur, brightness, contrast, and image size. It may suggest a retake or apply a mild contrast adjustment. A disease model can be connected later.</span></div>',
+                '<span class="small-note">The site checks image quality (blur, brightness, contrast). '
+                'A ViT-based model identifies the plant from 47 common houseplant species. '
+                'Detailed care instructions are provided from a curated database.</span></div>',
                 unsafe_allow_html=True,
             )
         with right:
             st.markdown(
                 '<div class="soft-card"><span class="status-pill">Website prototype</span>'
                 '<h3 style="margin-top:16px">Photo quality first</h3>'
-                '<p class="small-note">A classifier can be wrong when a photo is blurry, poorly lit, or outside its training data. PlantCare AI is designed to show those limits instead of hiding them.</p>'
+                '<p class="small-note">A classifier can be wrong when a photo is blurry, poorly lit, or outside its training data. PlantCare AI shows those limits instead of hiding them.</p>'
                 '</div>',
                 unsafe_allow_html=True,
             )
         st.markdown("#### How this prototype works")
-        st.markdown("1. Check image size, brightness, contrast, and blur\n2. Suggest a retake or a gentle contrast adjustment\n3. Screen usable photos with the supported plant-disease model\n4. Treat every model score as uncalibrated until it is validated")
+        st.markdown(
+            "1. Check image size, brightness, contrast, and blur\n"
+            "2. Identify plant species from 47 common houseplants\n"
+            "3. Display detailed care instructions (watering, light, humidity, etc.)\n"
+            "4. Treat every model score as uncalibrated until validated"
+        )
         return
 
     file_bytes = uploaded.getvalue()
@@ -140,7 +223,6 @@ def show_upload_page() -> None:
         st.image(original, caption="Your uploaded photo", use_container_width=True)
 
     with right:
-
         st.subheader("Photo check")
         st.markdown(
             '<span class="status-pill">Prototype quality checks · not validated</span>',
@@ -160,63 +242,81 @@ def show_upload_page() -> None:
         st.markdown("#### Suggested image handling")
         st.info(route.message)
         if route.should_retake:
-            st.warning("A new photo is recommended before any disease screening.")
+            st.warning("A new photo is recommended for more reliable identification.")
         if route.applied:
             with st.expander("View the gently adjusted image"):
                 st.image(prepared, caption="Prototype contrast adjustment", use_container_width=True)
 
-        st.markdown("#### Disease screening")
-        with st.spinner("Loading the plant classifier. First use downloads the model file (~24 MB)."):
+        st.markdown("#### Plant Identification")
+        with st.spinner("Loading the plant classifier. First use downloads the model file (~87 MB)."):
             predictor, predictor_message = load_predictor()
         if predictor is None:
             st.warning(predictor_message)
         elif route.should_retake:
-            st.info("The classifier is ready, but this photo needs to be retaken first.")
+            st.info("The classifier is ready, but this photo should be retaken for best results.")
         else:
             try:
                 result = predictor.predict(prepared)
-                if not result.in_scope:
-                    st.error("This photo does not look enough like the single-leaf images supported by the model. The disease guesses would be unreliable.")
-                    st.caption(f"Out-of-scope similarity: {result.similarity:.3f} (minimum {predictor.threshold:.3f}). Try one clear leaf on a plain background.")
-                elif result.candidates:
+                if result.candidates:
                     top = result.candidates[0]
-                    st.success(f"Possible match: **{format_label(top.label)}** · model score {top.score:.1%}")
-                    st.caption(f"Raw model score, not calibrated confidence. Image similarity check: {result.similarity:.3f}. A match is not a confirmed diagnosis.")
+                    st.success(f"Identified: **{format_label(top.label)}** · model score {top.score:.1%}")
+                    st.caption("Raw model score, not calibrated confidence. A match is not a guaranteed identification.")
                     if len(result.candidates) > 1:
-                        st.write("Other model candidates")
+                        st.write("Other possibilities:")
                         for item in result.candidates[1:]:
                             st.write(f"- {format_label(item.label)}: {item.score:.1%}")
-            except Exception as exc:  # keep the interface usable if optional weights are incompatible
-                st.error("The model could not analyze this image. Check the model file and label list.")
+
+                    # Display care information if available
+                    if result.plant_care_info:
+                        render_care_info(result.plant_care_info)
+                    else:
+                        st.info("No detailed care information available for this species.")
+                else:
+                    st.error("Could not identify the plant. Try a clearer photo.")
+            except Exception as exc:
+                st.error("The model could not analyze this image.")
                 st.caption(f"Technical detail: {exc}")
 
     st.divider()
     st.caption(
-        "PlantCare AI is a student research prototype. It does not provide a confirmed diagnosis or treatment advice. "
-        "For plant health decisions, consult a local agricultural expert."
+        "PlantCare AI is a research prototype. It does not provide guaranteed identification or professional care advice. "
+        "For plant health decisions, consult a local horticultural expert."
     )
-    st.caption("Classifier: [DINOv2 Plant Disease model](https://huggingface.co/rodynaemad/plant-disease-dinov2-small) · CC BY-SA 4.0. Its author reports a centroid similarity check for out-of-scope images. Field performance is unknown.")
+    st.caption("Classifier: [House Plant Image Detection (ViT)](https://huggingface.co/dima806/house-plant-image-detection) · Apache-2.0. Plant care data from PlantPal database (48 species). Field performance is unknown.")
 
 
 def show_about_page() -> None:
-    st.markdown("<div class='hero'><div class='eyebrow'>Project overview</div><h1>How PlantCare AI is planned to work</h1><p>A website-only Python project about image quality, careful classification, and honest uncertainty.</p></div>", unsafe_allow_html=True)
+    st.markdown("<div class='hero'><div class='eyebrow'>Project overview</div><h1>How PlantCare AI works</h1><p>A website-only Python project for houseplant identification with honest uncertainty.</p></div>", unsafe_allow_html=True)
     st.markdown("### The idea")
-    st.write("PlantCare AI is designed to examine a photo of a leaf and screen for a supported disease class. Before classification, the prototype checks whether the image is bright and sharp enough to use. If the photo is poor, it can ask for a retake instead of presenting a confident-looking guess.")
-    st.markdown("### Research plan")
-    st.write("The proposed study uses PlantVillage for model training and PlantDoc for a separate test on more varied images. Only classes that match clearly across the two datasets will be compared. The study will measure classification quality, confidence calibration, how often the system abstains, and response time.")
+    st.write("PlantCare AI identifies common houseplants from photos and provides detailed care instructions. Before classification, the prototype checks whether the image is bright and sharp enough to use. If the photo is poor, it asks for a retake instead of presenting a confident-looking guess.")
+    st.markdown("### Technical approach")
+    st.write(
+        "- **Image quality checks**: blur (Laplacian variance), brightness, contrast, clipping\n"
+        "- **Model**: Vision Transformer (ViT-B/16) fine-tuned on houseplant species, exported to ONNX INT8\n"
+        "- **Classes**: 47 common houseplant species\n"
+        "- **Care database**: Curated care data for each species (watering, light, humidity, toxicity, etc.)\n"
+        "- **Local inference**: Model downloads once (~87 MB), then runs entirely on your machine"
+    )
     st.markdown("### Current status")
-    st.info("Photo-quality checks and a 38-class disease-screening model are connected. The model downloads on first use. Its displayed scores are not calibrated, and this project has not independently validated its accuracy or field performance.")
+    st.info("Image quality checks and 47-class plant identification are connected. The model downloads on first use. Displayed scores are not calibrated, and this project has not independently validated accuracy or field performance.")
     st.markdown("### Privacy")
     st.write("Images are processed for the current page and are not saved by this prototype. Avoid uploading photos that contain personal information.")
+    st.markdown("### Data sources")
+    st.write(
+        "- **Model**: [dima806/house-plant-image-detection](https://huggingface.co/dima806/house-plant-image-detection) (ViT fine-tuned on houseplants)\n"
+        "- **ONNX export**: [onnx-community/house-plant-image-detection-ONNX](https://huggingface.co/onnx-community/house-plant-image-detection-ONNX)\n"
+        "- **Care data**: PlantPal database (48 species with detailed care instructions)"
+    )
 
 
 with st.sidebar:
     st.markdown("## 🌿 PlantCare AI")
-    page = st.radio("Navigate", ["Photo check", "About the project"], label_visibility="collapsed")
+    page = st.radio("Navigate", ["Identify plant", "About the project"], label_visibility="collapsed")
     st.divider()
     st.caption("Website-only · Python prototype")
+    st.caption("47 houseplant species · Local ONNX inference")
 
-if page == "Photo check":
+if page == "Identify plant":
     show_upload_page()
 else:
     show_about_page()
