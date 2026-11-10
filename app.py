@@ -22,23 +22,50 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
-    :root { --forest:#173c32; --leaf:#2e7057; --mint:#e9f2e9; --cream:#f7f7f1; --ink:#1b2924; }
-    .stApp { background:var(--cream); color:var(--ink); font-family:'DM Sans',sans-serif; }
-    h1,h2,h3 { font-family:'Manrope',sans-serif !important; color:var(--forest); }
-    [data-testid="stSidebar"] { background:#eef3eb; }
+    :root {
+      color-scheme: light;
+      --forest:#173c32; --leaf:#2e7057; --mint:#e9f2e9;
+      --cream:#f7f8f3; --ink:#18251f; --muted:#52645a;
+    }
+    html, body, .stApp {
+      background:var(--cream) !important;
+      color:var(--ink) !important;
+      font-family:'Segoe UI',Arial,sans-serif !important;
+      font-size:16px;
+    }
+    [data-testid="stAppViewContainer"], [data-testid="stMain"] { color:var(--ink) !important; }
+    [data-testid="stMarkdownContainer"] { color:var(--ink) !important; }
+    [data-testid="stMarkdownContainer"] p,
+    [data-testid="stMarkdownContainer"] li,
+    [data-testid="stWidgetLabel"] *, label { color:var(--ink) !important; line-height:1.6; }
+    h1,h2,h3,h4 { font-family:'Segoe UI',Arial,sans-serif !important; color:var(--forest) !important; font-weight:700 !important; }
+    [data-testid="stSidebar"] { background:#eaf1e9 !important; }
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] *,
+    [data-testid="stSidebar"] [data-testid="stRadio"] label,
+    [data-testid="stSidebar"] [data-testid="stCaptionContainer"] * { color:#18382b !important; }
+    [data-testid="stSidebar"] [data-testid="stRadio"] input { accent-color:var(--leaf); }
+    [data-testid="stHeader"], [data-testid="stToolbar"] { background:var(--cream) !important; }
+    [data-testid="stCaptionContainer"], .stCaption { color:var(--muted) !important; }
+    [data-testid="stFileUploaderDropzone"] {
+      background:#fff !important; border:1px dashed #718879 !important;
+    }
+    [data-testid="stFileUploaderDropzone"] * { color:#20342a !important; }
+    [data-testid="stFileUploaderDropzone"] button {
+      background:#e7f0e9 !important; color:#174e39 !important;
+      border:1px solid #769382 !important; font-weight:700 !important;
+    }
     .hero { background:linear-gradient(115deg,#173c32,#2d7057); border-radius:24px; padding:32px 36px; color:#fff; margin:8px 0 24px; }
     .hero h1 { color:#fff !important; font-size:2.2rem; margin:0 0 8px; }
-    .hero p { color:#e3eee5; font-size:1rem; margin:0; max-width:760px; }
-    .eyebrow { text-transform:uppercase; letter-spacing:.13em; font-size:.72rem; font-weight:700; color:#b9d9be; margin-bottom:12px; }
+    .hero p { color:#f0f6f1 !important; font-size:1rem; margin:0; max-width:760px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.13em; font-size:.72rem; font-weight:700; color:#d0e8d4; margin-bottom:12px; }
     .metric-card { background:white; border:1px solid #e5e9df; border-radius:16px; padding:16px 18px; min-height:90px; }
     .metric-label { color:#64736b; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
     .metric-value { color:var(--forest); font-family:'Manrope',sans-serif; font-size:1.2rem; font-weight:800; margin-top:6px; }
     .soft-card { background:white; border:1px solid #e5e9df; border-radius:18px; padding:20px 22px; }
     .status-pill { display:inline-block; background:#e2efe4; color:#235640; padding:6px 10px; border-radius:999px; font-weight:700; font-size:.78rem; }
-    .small-note { color:#637169; font-size:.86rem; }
-    div.stButton > button { border-radius:12px; border:0; background:#235640; color:white; font-weight:700; }
-    div.stButton > button:hover { background:#173c32; color:white; }
+    .small-note { color:#52645a !important; font-size:.9rem; }
+    div.stButton > button { border-radius:12px; border:0; background:#235640; color:white !important; font-weight:700; }
+    div.stButton > button:hover { background:#173c32; color:white !important; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -60,7 +87,7 @@ def show_upload_page() -> None:
         <div class="hero">
           <div class="eyebrow">PlantCare AI · Research prototype</div>
           <h1>A clearer first look at leaf health.</h1>
-          <p>Upload a leaf photo to check image quality and explore the proposed screening workflow. Disease predictions stay disabled until a trained model is added.</p>
+          <p>Upload a leaf photo for image-quality checks and screening across the model's supported classes. Results are preliminary signals, not a confirmed diagnosis.</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -89,8 +116,8 @@ def show_upload_page() -> None:
                 '</div>',
                 unsafe_allow_html=True,
             )
-        st.markdown("#### Planned steps")
-        st.markdown("1. Check the uploaded image\n2. Suggest a retake or a gentle adjustment\n3. Run a trained classifier when model weights are available\n4. Add calibrated confidence and an explanation map as later project steps")
+        st.markdown("#### How this prototype works")
+        st.markdown("1. Check image size, brightness, contrast, and blur\n2. Suggest a retake or a gentle contrast adjustment\n3. Screen usable photos with the supported plant-disease model\n4. Treat every model score as uncalibrated until it is validated")
         return
 
     file_bytes = uploaded.getvalue()
@@ -178,7 +205,7 @@ def show_about_page() -> None:
     st.markdown("### Research plan")
     st.write("The proposed study uses PlantVillage for model training and PlantDoc for a separate test on more varied images. Only classes that match clearly across the two datasets will be compared. The study will measure classification quality, confidence calibration, how often the system abstains, and response time.")
     st.markdown("### Current status")
-    st.info("The website can inspect uploaded photo quality. A disease classifier is optional and needs trained model weights. No disease-detection accuracy or research result is claimed by this prototype.")
+    st.info("Photo-quality checks and a 38-class disease-screening model are connected. The model downloads on first use. Its displayed scores are not calibrated, and this project has not independently validated its accuracy or field performance.")
     st.markdown("### Privacy")
     st.write("Images are processed for the current page and are not saved by this prototype. Avoid uploading photos that contain personal information.")
 
